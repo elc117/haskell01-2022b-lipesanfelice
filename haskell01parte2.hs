@@ -40,7 +40,7 @@ itemize :: [String] -> [String]
 itemize list = map htmlItem list
 
 onlyVowels :: String -> String
-onlyVowels word = filter isVowel2 word
+onlyVowels palavra = filter isVowel palavra
 
 onlyElderly :: [Int] -> [Int]
 onlyElderly list = filter isElderly list
@@ -59,6 +59,14 @@ between60and80 n = if n > 60 && n < 80 then True else False
 
 onlyBetween60and80 :: [Int] -> [Int]
 onlyBetween60and80 list = filter between60and80 list
+
+spaces :: [Char] -> Bool
+spaces x
+  | elem ' ' x    = True
+  | otherwise = False
+
+countSpaces :: [Char] -> Int -> Int
+countSpaces word n = if spaces word then n+1 else n+0
 
 calcAreas :: [Float] -> [Float]
 calcAreas list = map circleArea list
